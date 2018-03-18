@@ -48,7 +48,8 @@ public interface httpKeeper
 	// This function formats the recived data.
 	public void recv (byte[] data) throws IOException;
 	/* This function need to know how to deal with the data.
-	 * It should be only called by send(byte[])
+	 * It should be only called by send(byte[]),
+	 * and come always before the respond functions.
 	 */
 	
 	
