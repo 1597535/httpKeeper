@@ -1,6 +1,6 @@
 /* ----------------------
  * Interface for basic http communication.
- * last update: 17/3/2018
+ * last update: 18/3/2018
  * ---------------------- */
 
 /* A interface for classes to follow for proper web HTTP communication.
@@ -16,6 +16,8 @@ public interface httpKeeper
 	 * of the traget server.
 	 */
 	
+	
+	// ============================== Request Section ============================== //
 	// Sending HTTP GET request
 	public void requestGET (String file, String[] headers) throws IOException;
 	/* GET request is the most basic and common HTTP request.
@@ -35,6 +37,22 @@ public interface httpKeeper
 	 * ability to include parameters.
 	 */
 	
+	
+	// ============================== Network Section ============================== //
+	// This function only deals with the network layer.
+	public void send (byte[] data) throws IOException;
+	/* This function deals with the connection.
+	 * Should be called by request functions.
+	 */
+	
+	// This function formats the recived data.
+	public void recv (byte[] data) throws IOException;
+	/* This function need to know how to deal with the data.
+	 * It should be only called by send(byte[])
+	 */
+	
+	
+	// ============================== Respond Section ============================== //
 	// Receive HTTP stutus respond
 	public String respondStatus ();
 	/* The HTTP status code indicates the server respond for
@@ -47,7 +65,7 @@ public interface httpKeeper
 	 */
 	
 	// Receive HTTP body respond
-	public String respondBody ();
+	public byte[] respondBody ();
 	/* The Body of the file that the HTTP server Sended back.
 	 * If there is no body, this function should return empty
 	 * String.
