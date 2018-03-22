@@ -7,6 +7,8 @@
  * The implemet classes can and should extend the HTTP features.
  */
 
+package httpKeeper;
+
 // The network communication should return Exception to the user.
 import java.io.IOException;
 
