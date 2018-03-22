@@ -14,6 +14,8 @@
  *  * Connection: close
  */
 
+package httpKeeper;
+
 import java.net.Socket;
 import java.util.*;
 import java.io.*;
