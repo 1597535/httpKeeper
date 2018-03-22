@@ -13,6 +13,8 @@
  *  * Connection: close
  */
 
+package httpKeeper;
+
 import java.io.IOException;
 
 public abstract class KeeperClose implements HttpKeeper
